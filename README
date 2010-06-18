@@ -14,8 +14,9 @@
 = git-download
 ================================================================================
 
-  Changes to every other branch that you have checked out and executes a pull on it
-  Finally, it will check out the initial branch that you were using in the begining
+  Changes to every other branch that you have checked out and executes
+  a pull on it Finally, it will check out the initial branch that you
+  were using in the begining.
 
     cd my_repo
     git download
@@ -29,7 +30,8 @@
 = git-when
 ================================================================================
 
-  Will display all the currently checked out branches and their last modified time
+  Will display all the currently checked out branches and their last
+  modified time.
 
 = git-who
 ================================================================================
