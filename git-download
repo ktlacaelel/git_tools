@@ -42,4 +42,4 @@ branches.each do |branch|
   block 'Pulling out..', 'git pull'
 end
 
-block "Checking out initial branch: #{initial_branch}", 'git pull'
+block "Checking out initial branch: #{initial_branch}", "git co #{initial_branch}"
