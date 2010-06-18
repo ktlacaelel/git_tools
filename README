@@ -10,6 +10,19 @@
     I am pretty sure that they won't run on all envs. but what they
     really need is just a bit of really simple twicking.
 
+================================================================================
+= RECOMENDED ALIAS CONFIG (.gitconfig)
+================================================================================
+
+  +-----
+  |
+  |[alias]
+  |  who = who
+  |  download = download
+  |  get-branches = get-branches
+  |  when = when
+  |
+
 
 = git-download
 ================================================================================
