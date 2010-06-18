@@ -1,0 +1,3 @@
+
+# display commits in a repo by author
+git log --pretty=format:%an | ruby -e 'all = STDIN.read.split(/^/).group_by { |x| x }; all.keys.each { |key| puts "#{all[key].size}".rjust(10) + " #{key}" }' | sort -r

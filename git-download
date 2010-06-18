@@ -1,0 +1,45 @@
+#!/usr/bin/ruby
+
+def banner string
+  puts ' ' * 80
+  puts '** ' + string
+  puts '*' * 80
+end
+
+def pots string
+  puts '* ' + string
+end
+
+def block title, cmd
+  banner title
+  pots `#{cmd}`
+end
+
+def current_branch
+  output = `git branch`
+  list = output.split("\n")
+  this_one = list.grep(/\*/).first
+  this_one.gsub! /^../, ''
+end
+
+initial_branch = current_branch
+
+banner "You are using branch: #{initial_branch}"
+banner 'Detecting branches.'
+branches = `git branch | sed 's/^..//g'`.split("\n")
+pots branches.inspect
+
+# Silently checkout last branch to prevent errors like:
+#
+#       - Already on 'master'
+#
+# Then simply cicle through the array checking-out and pulling.
+#
+`git checkout #{branches.last}`
+
+branches.each do |branch|
+  block "Checking out branch: (#{branch})", "git checkout #{branch}"
+  block 'Pulling out..', 'git pull'
+end
+
+block "Checking out initial branch: #{initial_branch}", 'git pull'

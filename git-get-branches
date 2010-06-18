@@ -1,0 +1,43 @@
+#!/usr/bin/ruby
+
+def banner string
+  puts ' ' * 80
+  puts '** ' + string
+  puts '*' * 80
+end
+
+def pots string
+  puts '* ' + string
+end
+
+def block title, cmd
+  banner title
+  pots `#{cmd}`
+end
+
+def current_branch
+  output = `git branch`
+  list = output.split("\n")
+  this_one = list.grep(/\*/).first
+  this_one.gsub! /^../, ''
+end
+
+initial_branch = current_branch
+
+branches = `git br -a`.split("\n")
+branches.map! { |item| item.gsub(/^../, '') }
+branches = branches.grep /\//
+branches = branches.map! { |item| item.split('/').last }
+
+local_branches = `git branch | sed 's/^..//g'`.split("\n")
+branches = branches - local_branches
+
+banner 'Detecting branches.'
+pots branches.inspect
+
+branches.each do |branch|
+  block "Checking out remote branch. (#{branch})", "git checkout -b #{branch} origin/#{branch}"
+  pots 'Done!'
+end
+
+block 'Changing to *master* branch', 'git checkout master'
