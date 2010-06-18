@@ -1,1 +1,38 @@
-Fri Jun 18 14:40:25 CDT 2010
+
+================================================================================
+= GIT TOOLS
+================================================================================
+
+
+    Git tools is a set of useful scripts to help you do things simpler
+    with git.
+
+    I am pretty sure that they won't run on all envs. but what they
+    really need is just a bit of really simple twicking.
+
+
+= git-download
+================================================================================
+
+  Changes to every other branch that you have checked out and executes a pull on it
+  Finally, it will check out the initial branch that you were using in the begining
+
+    cd my_repo
+    git download
+
+
+= git-get-branches
+================================================================================
+
+  Will download all the remote branches and set them up as tracking branches
+
+= git-when
+================================================================================
+
+  Will display all the currently checked out branches and their last modified time
+
+= git-who
+================================================================================
+
+  Displays a count of commits per author
+
