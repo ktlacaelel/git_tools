@@ -1,0 +1,36 @@
+#!/usr/bin/ruby
+
+def banner string
+  puts ' ' * 80
+  puts '** ' + string
+  puts '*' * 80
+end
+
+def pots string
+  puts '* ' + string
+end
+
+def block title, cmd
+  banner title
+  pots `#{cmd}`
+end
+
+def extract_current_branch
+  output = `git branch`
+  list = output.split("\n")
+  this_one = list.grep(/\*/).first
+  this_one.gsub! /^../, ''
+end
+
+def current_branch
+  @current_branch ||= extract_current_branch
+end
+
+integration_branch = (ARGV[2] || 'master')
+
+banner "You are using branch: #{current_branch}"
+block "Pulling from current branch: (#{current_branch})", "git pull"
+block 'Checking out integration branch', "git checkout #{integration_branch}"
+block "Pulling from integration branch: (#{integration_branch})", "git pull"
+block "Merging (#{current_branch}->#{integration_branch})", "git merge #{integration_branch}"
+pots 'Done!'
