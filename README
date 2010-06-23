@@ -98,6 +98,24 @@
          .
          .
          .
+= git-integrate
+================================================================================
+
+  Performs a check out of an integration (default value is *master*) branch
+  and merges all changes found in current branch into it.
+
+  kazu@utopia:~/dev/git/rails$ git checkout develop
+  ... Write tests
+  ... Make changes
+  ... Comit/Push.
+  kazu@utopia:~/dev/git/rails$ git integrate
+  ... Now you are in *master* branch with all *develop* aditions.
+  ... verify conflicts and manually push!
+
+  Integrating into a different branch?
+
+  kazu@utopia:~/dev/git/rails$ git integrate my_other_branch
+
 
 ================================================================================
 = BUGS, PROBLEMS
