@@ -32,6 +32,7 @@
   |  download = download
   |  get-branches = get-branches
   |  when = when
+  |  integrate = integrate
   |
 
 
