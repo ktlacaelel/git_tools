@@ -1,7 +1,5 @@
 
-================================================================================
 = GIT TOOLS
-================================================================================
 
     Git tools is a set of useful scripts to help you do things simpler
     with git.
@@ -9,9 +7,7 @@
     I am pretty sure that they won't run on all envs. but what they
     really need is just a bit of really simple twicking.
 
-================================================================================
 = Instalation
-================================================================================
 
     Simply copy the files to your executables path! for example:
 
@@ -21,9 +17,7 @@
     $ sudo mv git-* /usr/bin/
 
 
-================================================================================
 = RECOMENDED ALIAS CONFIG (.gitconfig)
-================================================================================
 
   +-----
   |
@@ -37,7 +31,6 @@
 
 
 = git-download
-================================================================================
 
     Performs a git-pull on all locally checked out branches and brings you back
     to the one branch you started with..
@@ -47,7 +40,6 @@
 
 
 = git-get-branches
-================================================================================
 
   Will download all the remote branches and set them up as tracking branches
 
@@ -57,7 +49,6 @@
    ..
 
 = git-when
-================================================================================
 
   Will display all the currently checked out branches with their last-modified
   time.
@@ -81,7 +72,6 @@
 
 
 = git-who
-================================================================================
 
   Displays the total count of commits per author.
 
@@ -100,7 +90,6 @@
          .
          .
 = git-integrate
-================================================================================
 
   Performs a check out of an integration (default value is *master*) branch
   and merges all changes found in current branch into it.
@@ -118,23 +107,17 @@
   kazu@utopia:~/dev/git/rails$ git integrate my_other_branch
 
 
-================================================================================
 = BUGS, PROBLEMS
-================================================================================
 
     You might have some problems runing this scripts depending on your
     environment.
 
 
-================================================================================
 = DO YOU WANT TO HELP?
-================================================================================
 
     Send me a message first, fork, twick, and send me a pull request!
     or... file a bug?
 
-================================================================================
 = LICENSE
-================================================================================
 
     MIT, see LICENSE file
